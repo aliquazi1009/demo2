@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css + bts-css -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+    <!-- other js -->
+    <script src="./js/FontAwesomeIcons.js"></script>
+    <script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function () {
+            // jQuery code
+
+            //////////////////////// Prevent closing from click inside dropdown
+            $(document).on('click', '.dropdown-menu', function (e) {
+                e.stopPropagation();
+            });
+
+            // make it as accordion for smaller screens
+            if ($(window).width() < 992) {
+                $('.dropdown-menu a').click(function (e) {
+                    e.preventDefault();
+                    if ($(this).next('.submenu').length) {
+                        $(this).next('.submenu').toggle();
+                    }
+                    $('.dropdown').on('hide.bs.dropdown', function () {
+                        $(this).find('.submenu').hide();
+                    })
+                });
+            }
+
+        }); // jquery end
+    </script>
+    <!-- <script src="./js/anime.min.js"></script> -->
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                7STAR
+                <!-- <img src="./img/logo/logo4.png" height="55" alt="" loading="lazy"> -->
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="#">Home </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="#"> About </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Treeview menu </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+                            <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="">Submenu item 1</a></li>
+                                    <li><a class="dropdown-item" href="">Submenu item 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Submenu item 3 &raquo </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item" href="">Multi level 1</a></li>
+                                            <li><a class="dropdown-item" href="">Multi level 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="">Submenu item 4</a></li>
+                                    <li><a class="dropdown-item" href="">Submenu item 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
+                            <li><a class="dropdown-item" href="#"> Dropdown item 4 </a>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> More items </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+                            <li><a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 2 </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="">Submenu item 1</a></li>
+                                    <li><a class="dropdown-item" href="">Submenu item 2</a></li>
+                                    <li><a class="dropdown-item" href="">Submenu item 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 3 </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="">Another submenu 1</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 2</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 3</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 4 </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="">Another submenu 1</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 2</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 3</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#"> Dropdown item 4 </a></li>
+                            <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- slider -->
+    <section class="banner">
+        <!-- <div class="container"> -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-image: url(./img/banner-slider/sd1.jpg);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url(./img/banner-slider/sd2.jpg);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url(./img/banner-slider/sd3.jpg);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="far fa-angle-left fa-2x" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="far fa-angle-right fa-2x" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        <!-- </div> -->
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
